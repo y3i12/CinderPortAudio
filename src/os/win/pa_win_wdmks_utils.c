@@ -35,6 +35,8 @@
  * license above.
  */
 
+#define PA_WDMKS_NO_KSGUID_LIB
+
 #include <windows.h>
 #include <mmreg.h>
 #ifndef WAVE_FORMAT_IEEE_FLOAT

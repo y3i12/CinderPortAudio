@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cinder>
+<block
+	name="CinderPortAudio"
+	id="com.portaudio"
+	author="Ross Bencina et al."
+	summary="PortAudio CinderBlock"
+	git="https://github.com/y3i12/CinderPortAudio.git"
+	license="MIT"
+	version="19"
+	libraryUrl="http://portaudio.com/"
+	>
+  
+	<includePath>include</includePath>
+  <includePath>bindings/cpp/include</includePath>
+  <includePath>src/common</includePath>
+  
+  <headerPattern>include/portaudio.h</headerPattern>
+	<sourcePattern>src/common/*.c</sourcePattern>
+  <headerPattern>bindings/cpp/include/portaudiocpp/*.hxx</headerPattern>
+  <sourcePattern>bindings/cpp/source/portaudiocpp/*.cxx</sourcePattern>
+  
+	<platform os="msw">
+    <includePath>src/os/win</includePath>
+  
+    <sourcePattern>src/hostapi/dsound/*.c</sourcePattern>
+    <sourcePattern>src/hostapi/wasapi/*.c</sourcePattern>
+    <sourcePattern>src/hostapi/wdmks/*.c</sourcePattern>
+    <sourcePattern>src/os/win/*.c</sourcePattern>
+    
+    <headerPattern>include/pa_win_ds.h</headerPattern>
+    <headerPattern>include/pa_win_wasapi.h</headerPattern>
+    <headerPattern>include/pa_win_waveformat.h</headerPattern>
+    <headerPattern>include/pa_win_wmdks.h</headerPattern>
+	</platform>
+  
+	<platform os="macosx">
+    <sourcePattern>src/hostapi/coreaudio/*.c</sourcePattern>
+    <sourcePattern>src/os/mac_osx/*.c</sourcePattern>
+    
+    <headerPattern>include/pa_mac_core.h</headerPattern>
+	</platform>
+  
+</block>
+</cinder>
